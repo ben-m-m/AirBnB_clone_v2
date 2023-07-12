@@ -8,14 +8,14 @@ from datetime import datetime
 
 
 def do_pack():
-	"""generates .tgz archive from the contents of the web_static folder"""
-	local("sudo mkdir -p versions")
-	path = ("versions/web_static_{}.tgz"
-            	.format(datetime.strftime(datetime.now(), "%Y%m%d%H%M%S")))
-	result = local("tar -cvzf {} web_static"
-                   	.format(path))
+    """generates .tgz archive from the contents of the web_static folder"""
+    local("sudo mkdir -p versions")
+    path = ("versions/web_static_{}.tgz"
+            .format(datetime.strftime(datetime.now(), "%Y%m%d%H%M%S")))
+    result = local("tar -cvzf {} web_static"
+                   .format(path))
 
-	if result.succeeded:
-		return path
-	else:
-		return None
+    if result.succeeded:
+        return path
+    else:
+        return None
