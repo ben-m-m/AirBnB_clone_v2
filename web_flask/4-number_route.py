@@ -40,7 +40,7 @@ def python_route(text):
 
 @app.route('/number/<int:n>', strict_slashes=False)
 def number(n):
-    return "{} is a number".format(int n)
+    return "{} is a number".format(n)
 
 
 if __name__ == "__main__":
